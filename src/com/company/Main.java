@@ -9,7 +9,11 @@ public class Main {
 
         test.addNode(new Node(9));
 
-        test.getNode(9)
+
+        System.out.println(test.root.value);
+
+
+        test.getRootTotalBalance();
 
     }
 }

@@ -2,7 +2,7 @@ package com.company;
 
 public class BinarySearchTree {
 
-    private Node root;
+    public Node root;
 
     public BinarySearchTree(){}
 
@@ -117,7 +117,7 @@ public class BinarySearchTree {
                 // ... isn't null, then the method will be replayed
                 repeatGetNode(value,rootNode.right);
             } else {
-                // ... is null, then the node is added
+                // ... is null, then the node is found
                return rootNode;
             }
 
@@ -136,6 +136,35 @@ public class BinarySearchTree {
 
         return null;
     }
+
+    public float getRootTotalBalance(){
+        return root.getTotalBalance();
+    }
+
+    private Node search(){
+
+        return null;
+    }
+
+
+    public void clear(){
+        //set children of root to null
+    }
+
+}
+
+class Node{
+
+    int value;
+    Node left;
+    Node right;
+
+    Node(int value) {
+        this.value = value;
+        right = null;
+        left = null;
+    }
+
 
     /**
      * this method calculates the balance of a tree structure considering the balance of all nodes through recursion
@@ -184,7 +213,6 @@ public class BinarySearchTree {
         return (float) totalbalance;
     }
 
-
     /**
      * this method calculates the balance for this node
      * 0 = not balanced at all, 1 = perfectly balanced
@@ -220,6 +248,7 @@ public class BinarySearchTree {
      * @return size
      */
     public int getSize (){
+
         int size;
         int sizeR, sizeL;
 
@@ -241,31 +270,6 @@ public class BinarySearchTree {
         size = sizeL + sizeR + 1;
 
         return size;
-    }
-
-    private Node search(){
-
-        return null;
-    }
-
-
-
-    public void clear(){
-        //set children of root to null
-    }
-
-}
-
-class Node{
-
-    int value;
-    Node left;
-    Node right;
-
-    Node(int value) {
-        this.value = value;
-        right = null;
-        left = null;
     }
 
 }
